@@ -1,0 +1,102 @@
+<app-map 
+(click)="onMapClick()" class="map"></app-map>
+
+<br>
+
+<form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(form.value)">
+    <fieldset
+        class="formStyle"
+    >
+        <legend>ADD NEW REPORT</legend>
+         <!-- split form -->
+        <table>
+            <td>
+        <div class="formleft">
+        <label for="mons">Monster Name:</label>
+        <input 
+            id="mons"
+            type="text"
+            name="Monster Name"
+            placeholder="Monster Name"
+            formControlName="mName"> <br>
+
+
+            <label for="loc">Location:</label>
+            <select formControlName="loc" id="loc" (change)="onLocationChange(form.value.loc)">
+                <option *ngFor="let loc of location" [value]="loc">{{ loc }}</option>
+                <option value="other">Other</option>
+            </select>
+
+          <div *ngIf="showOther">
+            <label for="otherLocation">Other Location:</label>
+            <input formControlName="otherLocation" id="otherLocation" type="text">
+            <!-- You can add validation messages for otherLocation if needed -->
+          </div>
+            <h5>Can click on map for Longtitude and Latitude</h5>
+            <label for="long">Longtitude:</label>
+        <input
+            id="long"
+            type="number"
+            name="Longtitude"
+            placeholder="Longtitude"
+            formControlName="long"> 
+            <br>
+            <label for="lat">Latitude:</label>
+        <input
+            id="lat"
+            type="number"
+            name="Latitude"
+            placeholder="Latitude"
+            formControlName="lat">
+            </div> <br>
+        </td>
+        <td>
+        <!-- split form -->
+        <div class="formright">
+            <label for="img">Image:</label>
+        <input
+            id="img"
+            type="text"
+            name="Image"
+            placeholder="Image URL"
+            formControlName="img"> <br>
+            <label for="rName">Your Name:</label>
+        <input
+            id="rName"
+            type="text"
+            name="Your Name"
+            placeholder="Your Name"
+            formControlName="rName"> <br>
+            <label for="phone">Phone Number:</label>
+        <input
+            id="phone"
+            type="number"
+            name="Phone Number"
+            placeholder="Phone Number"
+            formControlName="phone"> <br>
+            <label for="extra">Extra Information:</label>
+        <input
+            id="extra"
+            type="text"
+            name="Extra Information"
+            placeholder="Extra Information"
+            formControlName="extra"> <br>
+        </div>
+        <button 
+            class="butt"
+            [disabled]="!form.valid"
+        > 
+            SAVE
+        </button> 
+        <button 
+                class="butt"
+                (click)="onCancel()"
+        >CANCEL</button>
+    </td>
+    </table>
+    </fieldset>
+    {{wrong}}
+    {{wrongLoc}}
+</form>

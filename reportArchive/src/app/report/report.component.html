@@ -1,0 +1,60 @@
+<!-- Use this page to display More Info page or just not use this at all. this page doesn't seem important -->
+
+<table class="block">
+   <!-- Have a default picture -->
+   <tr>
+      <td colspan="2">
+         <span *ngIf="(report.imgUrl.toLowerCase()==='none')||(report.imgUrl.toLowerCase()===''); then noIm else Im" ></span>
+                     <ng-template #Im><img class="theIMG" src="{{report.imgUrl}}" alt="image of the monster"></ng-template>
+                     <ng-template #noIm><img class="theIMG" src="./../../assets/NoImage.jpg" alt="No Image provided"></ng-template>
+      </td>
+   </tr>
+   <tr>
+      <td><b> Monster Name:</b></td>
+      <td> {{ report.monsterName }} </td>
+   </tr>
+   <tr>
+      <td><b> Location:</b></td>
+      <td> {{ report.location }} </td>
+   </tr>
+   <tr>
+      <td><b> Reported By:</b></td>
+      <td> {{ report.reporterName }} ( {{report.phoneNumber}}  ) </td>
+   </tr>
+   <tr>
+      <td><b> Time:</b> </td>
+      <td>{{ report.time|date:"MM/dd/yyyy (HH:mm)" }} </td>
+   </tr>
+   <!-- The status -->
+   <tr>
+      <td>
+         <span *ngIf="report.status; then open else resolve"></span>
+                <ng-template #open><b>OPEN</b></ng-template>
+                <ng-template #resolve><b>RESOLVED</b></ng-template>
+      </td>
+   <!-- Change button -->
+      <td>
+      <button 
+      class="butt"
+      [ngClass]="buttShow"
+      (click)="onChange()"
+      >Change</button>
+      <!-- confirmation -->
+      <label for="pass" [ngClass]="buttHid">Password</label>
+      <input type="text" [(ngModel)]="query" [ngClass]="buttHid" id="pass"> 
+      <!-- submit password -->
+      <button 
+      class="butt"
+      [ngClass]="buttHid"
+      (click)="onEdit(report)"
+      >Submit</button>
+      {{wrong}}
+      </td>
+    </tr>
+    <tr>
+      <td><b> Extra Information:</b></td>
+      <td> {{ report.extra }} </td>
+   </tr>
+</table>
+
+

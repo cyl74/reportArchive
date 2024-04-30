@@ -1,0 +1,24 @@
+.butt1{
+    padding: 10px 20px;
+    background-color: rgb(107, 11, 250);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin:1px;
+    float: left;
+}
+.butt2{
+    padding: 10px 20px;
+    background-color: rgb(107, 11, 250);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin:1px;
+}
+h1,h3{
+    color:white;
+}

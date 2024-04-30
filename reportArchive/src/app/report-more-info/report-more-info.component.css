@@ -1,0 +1,14 @@
+.butt{
+    padding: 10px 20px;
+    background-color: rgb(107, 11, 250);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin:1px;
+}
+
+.title{
+    color:white;
+}

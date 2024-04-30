@@ -1,0 +1,61 @@
+<app-map class="map"></app-map>
+<!-- maybe have it so it display the OPEN data first, then the resolve -->
+<table class="reportList">
+    <thead>
+    <tr>
+        <th><button 
+            class="butt"
+            (click)="onSortByLocation()"
+        >Location</button></th>
+        <th><button 
+            class="butt"
+            (click)="onSortBymName()"
+        >Monster Name</button></th>
+        <th><button 
+            class="butt"
+            (click)="onSortByTime()"
+        >Time Reported</button></th>
+        <th>Status</th>
+        <th></th><!-- More Info -->
+        <th></th><!--Delete-->
+    </tr>
+    </thead>
+    <!-- Add for each report, add a row -->
+    <tbody>
+        <tr *ngFor="let r of report">
+            <td>{{r.location}}</td>
+            <td>{{r.monsterName}}</td>
+            <td>{{r.time|date:"MM/dd/yyyy (HH:mm)"}}</td><!-- change formatting later -->
+            <td><!-- Resolve? -->
+                <span *ngIf="r.status; then open else resolve"></span>
+                <ng-template #open>OPEN</ng-template>
+                <ng-template #resolve>RESOLVED</ng-template></td>
+            <td>
+                <button 
+                class="butt1"
+                (click)="onMoreInfo(r)"
+            >More Info</button>
+            </td>
+            <td>
+                <button 
+                class="butt2"
+                (click)="onReportDelete(r)"
+            >DELETE</button>
+            </td>
+        </tr>
+        <!-- <tr>
+        <app-report
+        *ngFor="let r of report"
+        [report]="r"
+        (delete)="onReportDelete($event)"
+        >  
+        </app-report>
+        </tr> -->
+    </tbody>
+</table>
+
+<br>
+<button routerLink="/add"class="butt3">CREATE A NEW NUISANCE REPORT</button>
+<br>
+<br>
+    <button routerLink="/"class="butt3">Back to Title Back</button>

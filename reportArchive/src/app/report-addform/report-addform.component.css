@@ -1,0 +1,40 @@
+.map{
+    float:left
+}
+.butt{
+    padding: 10px 20px;
+    background-color: #0098fe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin:1px;
+}
+.formStyle{
+    width: 45vw;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(72, 0, 240);
+  border-radius: 5px;
+  margin:solid black 3px;
+  color:white
+}
+.formStyle legend{
+  color: white;
+}
+
+  
+.form label {
+    display: inline;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.formleft{
+    display: table;
+    float:left;
+}
+.formright{
+    display: table;
+}

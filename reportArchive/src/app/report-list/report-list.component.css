@@ -1,0 +1,78 @@
+.map{
+    float: left;
+    margin: 5px;
+}
+
+.reportList{
+    margin: 5px;
+    width: 45vw;
+    border:2px white solid;
+    border-collapse: collapse;
+}
+
+.reportList tr{
+    color:black;
+    border:2px white solid;
+}
+
+.reportList th{
+    padding: 10px;
+  text-align: center;
+  background-color:  rgb(72, 0, 240);
+  color: white;
+  border:2px white solid;
+}
+
+.reportList td{
+    padding: 10px;
+  text-align: center;
+  background-color:  rgb(72, 0, 240);
+  color: white;
+  border:2px white solid;
+}
+
+
+a{
+    color:#00bfff;
+}
+
+.butt{
+    padding: 10px 20px;
+    background-color: rgb(195, 0, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin:1px;
+}
+.butt1{
+    padding: 10px 20px;
+    background-color: #0098fe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin:1px;
+}
+.butt2{
+    padding: 10px 20px;
+    background-color: #c50000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin:1px;
+}
+.butt3{
+    padding: 10px 20px;
+    background-color: rgb(107, 11, 250);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin:1px;
+}
