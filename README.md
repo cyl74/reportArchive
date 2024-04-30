@@ -1,3 +1,3 @@
 # reportArchive
-Project from CMPT 272 class
+Project from CMPT 272 class \n
 run npm install to obtain the node_modules to make the code run
